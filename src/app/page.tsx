@@ -8,7 +8,8 @@ export default function Home() {
 
   interface notes {
     title: string,
-    content: string
+    content: string,
+    id: number
   };
 
   const [notes, setNotes] = useState<notes[]>([])
@@ -100,7 +101,7 @@ export default function Home() {
       </div>
 
       <div className="w-full pt-80 h-full overflow-y-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
-        {notes?.map((note: any) => (
+        {notes?.map((note: notes) => (
           <div
             key={note.id}
             className="relative bg-yellow-100 shadow-lg rounded-md p-4 w-80 h-60 transform rotate-1 hover:rotate-0 transition duration-200"
