@@ -1,4 +1,4 @@
-const BASE_SERVER_URL = "smart-notes-be-production.up.railway.app";
+const BASE_SERVER_URL = "https://smart-notes-be-production.up.railway.app";
 
 export const fetchNotes = async () => {
     const res = await fetch(`${BASE_SERVER_URL}/notes`);
