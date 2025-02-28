@@ -3,7 +3,7 @@ const BASE_SERVER_URL = "smart-notes-be-production.up.railway.app";
 export const fetchNotes = async () => {
     const res = await fetch(`${BASE_SERVER_URL}/notes`);
     if (!res.ok) {
-        throw new Error('failed to fetch notes', err)
+        throw new Error('failed to fetch notes', res.statusText)
     }
     return res.json();
 };
@@ -34,7 +34,7 @@ export const updateNote = async (id, title, content) => {
 
 
     if (!res.ok) {
-        throw new Error('failed to update note', err)
+        throw new Error('failed to update note', res.statusText)
     } return res.json();
 };
 
@@ -46,7 +46,7 @@ export const deleteNote = async (id) => {
 
 
     if (!res.ok) {
-        throw new Error('failed to delet note', err)
+        throw new Error('failed to delet note', res.statusText)
     } return res.json();
 };
 
